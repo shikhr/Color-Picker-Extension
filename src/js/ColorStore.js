@@ -43,13 +43,13 @@ class ColorStore {
     const colorsList = this.#colors.map((color) => {
       return { id: color.id, value: color.value };
     });
-    chrome.storage.local.set({ colors: colorsList }, () => {
+    chrome.storage.sync.set({ colors: colorsList }, () => {
       console.log('set ' + colorsList.length);
     });
   }
 
   getStore() {
-    chrome.storage.local.get(['colors'], (result) => {
+    chrome.storage.sync.get(['colors'], (result) => {
       if (!result.colors) {
         return;
       }

@@ -16,5 +16,5 @@
       "128": "images/logo/logo128.png"
     }
   },
-  "permissions": ["storage", "activeTab"]
+  "permissions": ["storage"]
 }
