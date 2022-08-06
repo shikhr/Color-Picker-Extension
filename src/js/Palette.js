@@ -25,6 +25,7 @@ export class Palette extends Alert {
         .then((result) => {
           colorStore.addColor(result.sRGBHex);
           this.copyToClipboard(result.sRGBHex);
+          colorStore.scrollToLast();
         })
         .catch((e) => {
           alert(e);

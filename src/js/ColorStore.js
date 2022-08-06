@@ -30,6 +30,14 @@ class ColorStore {
     this.setStore();
     this.renderColors();
   }
+  renderColors() {
+    this.#updateListeners();
+  }
+  scrollToLast() {
+    this.#colors[this.#colors.length - 1].scroll({
+      behavior: 'smooth',
+    });
+  }
 
   setStore() {
     const colorsList = this.#colors.map((color) => {
@@ -39,9 +47,7 @@ class ColorStore {
       console.log('set ' + colorsList.length);
     });
   }
-  renderColors() {
-    this.#updateListeners();
-  }
+
   getStore() {
     chrome.storage.local.get(['colors'], (result) => {
       if (!result.colors) {

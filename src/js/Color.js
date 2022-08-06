@@ -17,6 +17,11 @@ export class Color extends Alert {
   get id() {
     return this.#id;
   }
+  scroll() {
+    this.element.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }
   #setValues() {
     this.element.querySelector('#color-value').value = this.value;
     this.element.querySelector('#color-wrapper').style.background = this.value;
