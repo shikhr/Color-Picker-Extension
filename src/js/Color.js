@@ -14,7 +14,7 @@ export class Color extends Alert {
   configure() {
     this.element.querySelector('#color-value').value = this.value;
     this.element.querySelector('#color-wrapper').style.background = this.value;
-    this.element.querySelector('#color-value-label').textContent = this.value;
+    this.element.querySelector('#label-value').textContent = this.value;
     this.element
       .querySelector('#color-value-label')
       .addEventListener('click', () => {

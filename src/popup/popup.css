@@ -111,11 +111,31 @@ main {
   font-size: 0.9rem;
   cursor: pointer;
   transition: ease 200ms;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 #color-value-label:hover {
-  padding: 0.25rem 1rem;
+  /* padding-left: 20px; */
 }
-
+#color-value-label #copy-icon {
+  /* visibility: hidden; */
+  max-width: 0px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: ease 200ms;
+}
+#color-value-label #copy-icon img {
+  width: 100%;
+  object-fit: contain;
+}
+#color-value-label:hover #copy-icon {
+  max-width: 15px;
+  max-height: 100%;
+}
+#color-value-label:hover #label-value {
+  padding-left: 0.25rem;
+}
 #color-value-delete {
   cursor: pointer;
   width: 15px;
