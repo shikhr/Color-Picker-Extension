@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #2b343b;
+  width: 250px;
+  height: 100%;
+}
+main {
+  padding: 1rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+.main-controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+.main-controls h2 {
+  text-align: center;
+  width: fit-content;
+  color: #fff;
+}
+.picker-button {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  cursor: default;
+  transition: ease 200ms;
+}
+.picker-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: ease 200ms;
+}
+
+.picker-button:hover img {
+  transform: rotate(-45deg);
+}
+.clear-palette {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.clear-palette img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: ease 200ms;
+  padding: 10px;
+}
+.clear-palette:hover img {
+  transform: rotate(-15deg);
+  padding: 10px;
+}
+
+.palette {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1rem;
+  max-height: 430px;
+  overflow: auto;
+}
+.color {
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  /* border: 1px solid wheat; */
+}
+#color-wrapper {
+  overflow: hidden;
+  width: 60px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+#color-value {
+  /* border-radius: 100%; */
+  /* visibility: hidden; */
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+#color-value-label {
+  color: #fff;
+  padding: 0.25rem 0.75rem;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: ease 200ms;
+}
+#color-value-label:hover {
+  padding: 0.25rem 1rem;
+}
+
+#color-value-delete {
+  cursor: pointer;
+  width: 15px;
+  margin-left: auto;
+}
+#color-value-delete img {
+  width: 100%;
+  transition: ease 200ms;
+}
+#color-value-delete:hover img {
+  transform: rotate(90deg);
+}
+.alert {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+  width: fit-content;
+  padding: 0.5rem 1rem;
+  background-color: #111;
+  color: #f2f2f2;
+  border-radius: 10px;
+}
+.hidden {
+  display: none;
+}
+.slide-anim {
+  animation: slideIn 1s ease-in;
+}
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

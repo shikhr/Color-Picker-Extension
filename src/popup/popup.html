@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <link rel="stylesheet" href="popup.css">
+  <script defer type="module" src="popup.js"></script>
+</head>
+
+<body>
+  <main>
+    <class class="main-controls">
+      <button class="picker-button" id="picker-button"><img src="../images/logo/logo128.png" alt="eyedroppper"></button>
+      <h2>Color Picker</h2>
+      <button class="clear-palette" id="clear-palette"><img src="../images/garbage.png" alt="deleteAll"></button>
+    </class>
+    <div class="palette">
+
+    </div>
+    <div id="alert" class="alert hidden">Copied!</div>
+    <template id="color-template">
+      <div class="color">
+        <div id="color-wrapper">
+          <input type="color" id="color-value">
+        </div>
+        <label for="color-result" title="copy" id="color-value-label"></label>
+        <div id="color-value-delete"><img src="../images/close.png" alt="delete"></div>
+      </div>
+    </template>
+  </main>
+</body>
+
+</html>
