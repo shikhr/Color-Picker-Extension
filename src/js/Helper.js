@@ -1,15 +1,25 @@
 export class Helper {
   #alertElement;
+  #timeout;
   constructor() {
-    this.#alertElement = document.getElementById('alert');
+    const alertTemplate = document.getElementById('alert-template');
+    const importedNode = document.importNode(alertTemplate.content, true);
+    this.#alertElement = importedNode.firstElementChild;
   }
   pushAlert(message) {
+    if (this.#timeout) {
+      clearTimeout(this.#timeout);
+      this.#timeout = setTimeout(() => {
+        this.#alertElement.remove();
+      }, 1000);
+    }
     this.#alertElement.textContent = message;
-    this.#alertElement.classList.remove('hidden');
-    this.#alertElement.classList.add('slide-anim');
-    setTimeout(() => {
-      this.#alertElement.classList.add('hidden');
-      this.#alertElement.classList.remove('slide-anim');
+    document
+      .querySelector('main')
+      .insertAdjacentElement('afterbegin', this.#alertElement);
+
+    this.#timeout = setTimeout(() => {
+      this.#alertElement.remove();
     }, 1000);
   }
   copyToClipboard(value) {
