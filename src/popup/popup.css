@@ -115,11 +115,9 @@ main {
   justify-content: center;
   align-items: center;
 }
-#color-value-label:hover {
-  /* padding-left: 20px; */
-}
+
 #color-value-label #copy-icon {
-  /* visibility: hidden; */
+  visibility: hidden;
   max-width: 0px;
   max-height: 0px;
   overflow: hidden;
@@ -130,6 +128,7 @@ main {
   object-fit: contain;
 }
 #color-value-label:hover #copy-icon {
+  visibility: visible;
   max-width: 15px;
   max-height: 100%;
 }
