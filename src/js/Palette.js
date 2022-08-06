@@ -1,8 +1,8 @@
-import { Alert } from './Alert.js';
+import { Helper } from './Helper.js';
 
 import { colorStore } from './ColorStore.js';
 
-export class Palette extends Alert {
+export class Palette extends Helper {
   constructor() {
     super();
     this.element = document.querySelector('.palette');

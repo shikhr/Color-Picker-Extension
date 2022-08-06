@@ -1,7 +1,7 @@
-import { Alert } from './Alert.js';
+import { Helper } from './Helper.js';
 import { colorStore } from './ColorStore.js';
 
-export class Color extends Alert {
+export class Color extends Helper {
   #id;
   constructor(value) {
     super();

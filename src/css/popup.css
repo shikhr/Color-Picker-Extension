@@ -161,7 +161,7 @@ main {
   display: none;
 }
 .slide-anim {
-  animation: slideIn 1s ease-in;
+  animation: slideIn 1s ease;
 }
 @keyframes slideIn {
   0% {
