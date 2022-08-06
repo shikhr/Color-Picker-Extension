@@ -1,3 +1,3 @@
-import { Palette } from '../js/Palette.js';
+import { Palette } from './Palette.js';
 
 const palette = new Palette();
