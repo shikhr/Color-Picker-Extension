@@ -47,10 +47,9 @@ main {
   background-color: var(--col-sec);
   border-radius: 100%;
   border: none;
-  padding: 10px;
   outline: none;
   cursor: pointer;
-  overflow: hidden;
+  /* overflow: hidden; */
   transition: 200ms ease;
 }
 .picker-button svg,
@@ -68,13 +67,22 @@ main {
 .clear-palette:hover {
   background-color: var(--col-red);
 }
+.clear-palette svg #top {
+  transition: 200ms ease;
+  transform-origin: right;
+}
+.clear-palette svg #bottom {
+  transition: 200ms ease;
+}
 
 .picker-button:hover svg {
   transform: rotate(-45deg);
 }
-.clear-palette:hover svg {
-  transform: rotate(-20deg);
-  /* fill: var(--col-red); */
+.clear-palette:hover svg #top {
+  transform: rotate(10deg) translate(-15px, 10px);
+}
+.clear-palette:hover svg #bottom {
+  transform: translate(0, 10px);
 }
 
 .palette {
