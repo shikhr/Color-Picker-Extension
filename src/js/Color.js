@@ -3,9 +3,9 @@ import { colorStore } from './ColorStore.js';
 
 export class Color extends Helper {
   #id;
-  constructor(value) {
+  constructor(id, value) {
     super();
-    this.#id = this.#getRandomId();
+    this.#id = id;
     this.value = value;
     this.hostElement = document.querySelector('.palette');
     const templateElement = document.getElementById('color-template');
@@ -23,25 +23,25 @@ export class Color extends Helper {
     });
   }
   #setValues() {
-    this.element.querySelector('#color-value').value = this.value;
-    this.element.querySelector('#color-wrapper').style.background = this.value;
-    this.element.querySelector('#label-value').textContent = this.value;
+    this.element.querySelector('.color-value').value = this.value;
+    this.element.querySelector('.color-wrapper').style.background = this.value;
+    this.element.querySelector('.label-value').textContent = this.value;
   }
   #configure() {
     this.element
-      .querySelector('#color-value-label')
+      .querySelector('.color-value-label')
       .addEventListener('click', () => {
         this.copyToClipboard(this.value);
       });
     this.element
-      .querySelector('#color-value')
+      .querySelector('.color-value')
       .addEventListener('input', (e) => {
         this.value = e.target.value;
         this.#setValues();
         colorStore.setStore();
       });
     this.element
-      .querySelector('#color-value-delete')
+      .querySelector('.color-value-delete')
       .addEventListener('click', () => {
         colorStore.deleteColor(this.#id);
         this.element.remove();
@@ -50,9 +50,5 @@ export class Color extends Helper {
 
   attach() {
     this.hostElement.insertAdjacentElement('beforeend', this.element);
-  }
-
-  #getRandomId() {
-    return Math.random().toString();
   }
 }

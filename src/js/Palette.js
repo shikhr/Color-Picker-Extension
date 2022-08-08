@@ -23,7 +23,7 @@ export class Palette extends Helper {
       eyeDropper
         .open()
         .then((result) => {
-          colorStore.addColor(result.sRGBHex);
+          colorStore.addColor(this.getRandomId(), result.sRGBHex);
           this.copyToClipboard(result.sRGBHex);
           colorStore.scrollToLast();
         })

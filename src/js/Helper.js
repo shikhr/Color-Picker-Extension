@@ -28,8 +28,11 @@ export class Helper {
         this.pushAlert('Copied');
       },
       () => {
-        alert('Failed to copy!');
+        this.pushAlert('Failed to copy!');
       }
     );
+  }
+  getRandomId() {
+    return Math.random().toString() + new Date().toISOString();
   }
 }

@@ -1,6 +1,7 @@
 import { Color } from './Color.js';
+import { Helper } from './Helper.js';
 
-class ColorStore {
+class ColorStore extends Helper {
   #listeners = [];
   #colors = [];
   static #instance;
@@ -17,9 +18,8 @@ class ColorStore {
       return this.#instance;
     }
   }
-  addColor(value) {
-    const color = new Color(value);
-    // this.colorChangeHandler(color);
+  addColor(id, value) {
+    const color = new Color(id, value);
     this.#colors.push(color);
     this.setStore();
     this.renderColors();
@@ -34,9 +34,7 @@ class ColorStore {
     this.#updateListeners();
   }
   scrollToLast() {
-    this.#colors[this.#colors.length - 1].scroll({
-      behavior: 'smooth',
-    });
+    this.#colors.at(-1).scroll();
   }
 
   setStore() {
@@ -44,7 +42,7 @@ class ColorStore {
       return { id: color.id, value: color.value };
     });
     chrome.storage.sync.set({ colors: colorsList }, () => {
-      console.log('set ' + colorsList.length);
+      console.log('set ' + colorsList);
     });
   }
 
@@ -54,7 +52,8 @@ class ColorStore {
         return;
       }
       result.colors.forEach((color) => {
-        this.addColor(color.value);
+        console.log(color.id, color.value);
+        this.addColor(color.id, color.value);
       });
       this.renderColors();
     });
