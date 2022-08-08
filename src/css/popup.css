@@ -99,7 +99,7 @@ main {
   padding: 0 1rem;
   /* border: 1px solid wheat; */
 }
-#color-wrapper {
+.color-wrapper {
   overflow: hidden;
   width: 60px;
   height: 40px;
@@ -107,7 +107,7 @@ main {
   border-radius: 10px;
 }
 
-#color-value {
+.color-value {
   /* border-radius: 100%; */
   /* visibility: hidden; */
   opacity: 0;
@@ -115,7 +115,7 @@ main {
   height: 100%;
   cursor: pointer;
 }
-#color-value-label {
+.color-value-label {
   color: #fff;
   padding: 0.25rem 0.75rem;
   text-transform: uppercase;
@@ -128,7 +128,7 @@ main {
   user-select: none;
 }
 
-#color-value-label #copy-icon {
+.color-value-label .copy-icon {
   visibility: hidden;
   max-width: 0px;
   max-height: 0px;
@@ -138,29 +138,29 @@ main {
   fill: #fff;
   -webkit-user-drag: none;
 }
-#color-value-label #copy-icon svg {
+.color-value-label .copy-icon svg {
   width: 100%;
   object-fit: contain;
 }
-#color-value-label:hover #copy-icon {
+.color-value-label:hover .copy-icon {
   visibility: visible;
   max-width: 10px;
   max-height: 100%;
 }
-#color-value-label:hover #label-value {
+.color-value-label:hover .label-value {
   padding-left: 0.25rem;
 }
-#color-value-delete {
+.color-value-delete {
   cursor: pointer;
   width: 15px;
   margin-left: auto;
 }
-#color-value-delete svg {
+.color-value-delete svg {
   width: 100%;
   transition: 200ms ease;
   fill: var(--col-sec);
 }
-#color-value-delete:hover svg {
+.color-value-delete:hover svg {
   fill: var(--col-red);
   transform: rotate(90deg);
 }
