@@ -23,8 +23,13 @@ export class Palette extends Helper {
       eyeDropper
         .open()
         .then((result) => {
-          colorStore.addColor(this.getRandomId(), result.sRGBHex);
-          this.copyToClipboard(result.sRGBHex);
+          let colorValue = result.sRGBHex;
+          // fix because EyeDropper api started returning rgb strings instead of hex
+          if (colorValue.match(/^rgb/)) {
+            colorValue = this.rgbToHex(colorValue);
+          }
+          colorStore.addColor(this.getRandomId(), colorValue);
+          this.copyToClipboard(colorValue);
           colorStore.scrollToLast();
         })
         .catch((e) => {
